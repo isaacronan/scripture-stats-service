@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "scripture-stats-service"
+version = "0.1.0"
+description = ""
+authors = ["Isaac Ronan <isaacronan@users.noreply.github.com>"]
+readme = "README.md"
+packages = [{include = "scripture_stats_service"}]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+pymongo = "^4.3.3"
+numpy = "^1.24.3"
+flask = "^2.3.2"
+gunicorn = "^20.1.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
