@@ -6,7 +6,15 @@ class Store:
     def __init__(self):
         db_host = os.getenv('DB_HOST')
         db_port = os.getenv('DB_PORT')
-        client = MongoClient(f'mongodb://{db_host}:{db_port}')
+        db_username = os.getenv('DB_USERNAME')
+        db_password = os.getenv('DB_PASSWORD')
+        client = MongoClient(
+            db_host,
+            port=int(db_port),
+            username=db_username,
+            password=db_password,
+            authSource='admin',
+        )
         db = client.scripture
         self.collection = db.verses
 
